@@ -22,8 +22,19 @@ var _ = {};
 
   // Like last, but for the first elements
   _.first = function(array, n) {
-    // TIP: you can often re-use similar functions in clever ways, like so:
-    return _.last(array.reverse(), n);
+    if (n == null) {
+      return array[0];
+    } else {
+      if (n <= array.length) {
+        var newArray = [];
+        for (var i = 0; i < n; i++) {
+          newArray[newArray.length] = array[i];
+        }
+        return newArray;
+      } else {
+        return array;
+      }
+    }
   };
 
 

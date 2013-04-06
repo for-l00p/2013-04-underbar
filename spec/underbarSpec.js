@@ -24,8 +24,6 @@ describe("last", function() {
 
 });
 
-/*
-
 describe("first", function() {
   it("should be able to pull out the first element of an array", function() {
     expect(_.first([1,2,3])).to.equal(1);
@@ -44,6 +42,7 @@ describe("first", function() {
 
 });
 
+/*
 describe("each", function() {
   it("should provide value and iteration count", function() {
     var letters = ['a', 'b', 'c'];
