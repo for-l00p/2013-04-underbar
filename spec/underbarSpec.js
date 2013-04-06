@@ -58,7 +58,7 @@ describe("each", function() {
     ]);
   });
 });
-/*
+
 describe("indexOf", function() {
 
   it("should be able to compute indexOf even when the native function is undefined", function() {
@@ -105,7 +105,7 @@ describe("filter", function() {
     expect(odds).to.eql([1, 3, 5]);
   });
 });
-
+/*
 describe("reject", function() {
   it("should reject all even numbers", function() {
     var isEven = function(num) { return num % 2 === 0; };
