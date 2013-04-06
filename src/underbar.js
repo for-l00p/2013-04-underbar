@@ -131,9 +131,13 @@ var _ = {};
 
   // Calls the method named by methodName on each value in the list.
   _.invoke = function(list, methodName) {
-    return _.map(list, function(item){
-      return item[methodName].apply(item);
-    });  
+    return _.map(list, function(item) {
+      if (typeof(methodName) == "string") {
+        return item[methodName].apply(item);
+      } else {
+        return methodName.apply(item);
+      }
+    });
   };
 
   // Reduces an array or object to a single value by repetitively calling
