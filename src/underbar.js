@@ -154,11 +154,12 @@ var _ = {};
   //   }, 0); // should be 6
   //
   _.reduce = function(obj, iterator, initialValue) {
-    var singleValue = 0;
+    if (initialValue === undefined) {
+      var singleValue = 0;
+    } else {
+      var singleValue = initialValue;
+    }
     _.each(obj, function(item) {
-      if (initialValue) {
-        singleValue = initialValue;
-      }
       singleValue = iterator(singleValue, item);
     });
     return singleValue
@@ -180,6 +181,12 @@ var _ = {};
   // Determine whether all of the elements match a truth test.
   _.every = function(obj, iterator) {
     // TIP: use reduce on this one!
+    return _.reduce(obj, function(findTrue, item) {
+      if(!findTrue){
+        return false;
+      }  
+      return !!iterator(item);
+    }, true); 
   };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
