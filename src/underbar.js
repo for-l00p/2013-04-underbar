@@ -154,6 +154,14 @@ var _ = {};
   //   }, 0); // should be 6
   //
   _.reduce = function(obj, iterator, initialValue) {
+    var singleValue = 0;
+    _.each(obj, function(item) {
+      if (initialValue) {
+        singleValue = initialValue;
+      }
+      singleValue = iterator(singleValue, item);
+    });
+    return singleValue
   };
 
   // Determine if the array or object contains a given value (using `===`).
