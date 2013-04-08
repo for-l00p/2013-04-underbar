@@ -198,6 +198,10 @@ var _ = {};
   // provided, provide a default one
   _.any = function(obj, iterator) {
     // TIP: re-use every() here
+    iterator = iterator || function(item){return Boolean(item);}
+    return !_.every(obj, function(item){
+      return !iterator(item);
+    });    
   };
 
 
