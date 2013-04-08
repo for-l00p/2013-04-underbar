@@ -1,5 +1,5 @@
 var returnArguments = function(){ return arguments; };
-/*
+
 describe("last", function() {
   it("should pull the last element from an array", function() {
     expect(_.last([1,2,3])).to.equal(3);
@@ -183,7 +183,7 @@ describe("invoke with function reference", function() {
     expect(result[1]).to.eql([1, 2, 3]);
   });
 });
-*/
+
 describe("reduce", function() {
   it("should be able to sum up an array", function() {
     var callback = function(sum, num) {return sum + num; };
@@ -247,7 +247,7 @@ describe("every", function() {
     expect(_.every([undefined, undefined, undefined], getValue)).to.equal(false);
   });
 });
-/*
+
 describe("any", function() {
   var nativeSome = Array.prototype.some;
   var isEven = function(number){
@@ -300,7 +300,7 @@ describe("any", function() {
     expect(_.any([0], passThrough)).to.equal(false);
   });
 });
-
+/*
 describe("extend", function() {
   it("should extend an object with the attributes of another", function() {
     var extended = _.extend({}, {a:'b'});

@@ -42,8 +42,17 @@ var _ = {};
 
   // Call iterator(value, key, collection) for each element of collection
   _.each = function(obj, iterator) {
-    for (var i = 0; i < obj.length; i++) {
-      iterator(obj[i], i, obj);
+    if(!obj) return;
+    if(obj.length){
+      for (var i = 0; i < obj.length; i++) {
+        iterator(obj[i], i, obj);
+      }
+    } else {
+      for(var key in obj){
+        if(obj.hasOwnProperty(key)){
+          iterator(obj[key], key, obj);
+        }
+      }
     }
   };
 
@@ -154,11 +163,7 @@ var _ = {};
   //   }, 0); // should be 6
   //
   _.reduce = function(obj, iterator, initialValue) {
-    if (initialValue === undefined) {
-      var singleValue = 0;
-    } else {
-      var singleValue = initialValue;
-    }
+    var singleValue = initialValue || 0;
     _.each(obj, function(item) {
       singleValue = iterator(singleValue, item);
     });
