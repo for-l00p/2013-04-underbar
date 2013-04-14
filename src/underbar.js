@@ -310,6 +310,18 @@ var _ = {};
 
   // Shuffle an array.
   _.shuffle = function(obj) {
+    //Used Fisher-Yates algorithm
+    var i = obj.length;
+    var newArray = obj;
+    while (--i) {
+      j = Math.floor(Math.random()*(i+1));
+      tempi = newArray[i];
+      tempj = newArray[j];
+      newArray[i] = tempj;
+      newArray[j] = tempi;
+      console.log(newArray);
+    }
+    return newArray;
   };
 
   /* (End of pre-course curriculum) */

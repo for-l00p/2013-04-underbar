@@ -420,7 +420,7 @@ describe("delay", function() {
     expect(callback.calledWith(1, 2)).to.be(true);
   });
 });
-/*
+
 describe("shuffle", function() {
   it("should not modify the original object", function() {
     var numbers = _.range(10);
@@ -429,7 +429,7 @@ describe("shuffle", function() {
     expect(shuffled.sort()).to.eql(numbers);
   });
 });
-
+/*
 describe("sortBy", function() {
   it("should sort by age", function() {
     var people = [{name : 'curly', age : 50}, {name : 'moe', age : 30}];
