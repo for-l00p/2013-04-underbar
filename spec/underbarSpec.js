@@ -356,7 +356,7 @@ describe("defaults", function() {
     expect(options.word).to.equal("word");
   });
 });
-/*
+
 describe("once", function() {
   it("should only run a user-defined function if it hasn't been run before", function() {
     var num = 0;
@@ -420,7 +420,7 @@ describe("delay", function() {
     expect(callback.calledWith(1, 2)).to.be(true);
   });
 });
-
+/*
 describe("shuffle", function() {
   it("should not modify the original object", function() {
     var numbers = _.range(10);
