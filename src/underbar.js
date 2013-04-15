@@ -312,6 +312,7 @@ var _ = {};
   _.shuffle = function(obj) {
     //Used Fisher-Yates algorithm
     var i = obj.length;
+    var j, tempi, tempj;
     var newArray = obj;
     while (--i) {
       j = Math.floor(Math.random()*(i+1));
@@ -319,7 +320,6 @@ var _ = {};
       tempj = newArray[j];
       newArray[i] = tempj;
       newArray[j] = tempi;
-      console.log(newArray);
     }
     return newArray;
   };
